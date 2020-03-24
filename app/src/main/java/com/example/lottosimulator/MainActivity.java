@@ -47,9 +47,23 @@ public class MainActivity extends BaseActivity {
         binding.buyOneLottoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                당첨번호를 생성 => 텍스트뷰에 반영
+//            당첨번호를 생성 => 텍스트뷰에 반영
             makeWinLottoNum();
+//            몇등인지 판단
             checkLottoRank();
+            }
+        });
+
+        binding.buyAutoLottoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                사용금액의 총액이 1천만원이 될때 까지 반복
+                while (useMoneyAmount < 10000000) {
+//                   당첨번호를 생성 => 텍스트뷰에 반영
+                    makeWinLottoNum();
+//                   몇등인지 판단
+                    checkLottoRank();
+                }
             }
         });
 
@@ -221,7 +235,6 @@ public class MainActivity extends BaseActivity {
         binding.fourthRankCountTxt.setText(String.format("4등 : %,d회",fourthRankCount));
         binding.fifthRankCountTxt.setText(String.format("5등 : %,d회",fifthRankCount));
         binding.noRankCountTxt.setText(String.format("낙첨 : %,d회",noRankCount));
-
 
     }
 
