@@ -187,7 +187,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/forthRankCountTxt"
+            android:id="@+id/fourthRankCountTxt"
             android:layout_marginTop="15dp"
             android:textSize="16sp"
             android:text="4등 : 0회"
