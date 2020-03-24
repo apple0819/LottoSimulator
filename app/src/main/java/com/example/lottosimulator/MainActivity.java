@@ -20,6 +20,7 @@ public class MainActivity extends BaseActivity {
     int[] winLottoNumArr = new int[6];
     int bonusNum = 0;
     long useMoneyAmount = 0;
+    int[] myLottoNumArr = {5,19,24,27,35,42};
 
     ActivityMainBinding binding = null;
 
@@ -143,6 +144,38 @@ public class MainActivity extends BaseActivity {
         useMoneyAmount+=1000;
 
         binding.useMoneyTxt.setText(String.format("사용 금액 : %,d원",useMoneyAmount));
+
+//        몇등인지?
+//        내 번호를 하나 들고 => 당첨번호 6개를 돌아본다
+//        얻어 낼것? 몇개의 숫자를 뭦췄는지.
+//        맞춘갯수를 담아줄 변수
+
+        int correctCount = 0;
+        for (int myNum : myLottoNumArr) {
+            for (int winNum : winLottoNumArr) {
+                if(myNum == winNum) {
+                    correctCount++;
+                }
+            }
+        }
+
+//        correctCount의 값에 따라 등수를 판정.
+        if (correctCount == 6) {
+//            1등
+        }
+        else if (correctCount == 5) {
+//            2등 / 3등 재검사 필요 => 보너스번호를 맞췄는지?
+        }
+        else if (correctCount == 4) {
+//            4등
+        }
+        else if (correctCount == 3) {
+//            5등
+        }
+        else {
+//            꽝!
+        }
+
 
     }
 
