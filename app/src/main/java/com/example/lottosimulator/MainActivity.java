@@ -19,6 +19,7 @@ public class MainActivity extends BaseActivity {
     List<TextView> winNumTextList = new ArrayList<>();
     int[] winLottoNumArr = new int[6];
     int bonusNum = 0;
+    long useMoneyAmount = 0;
 
     ActivityMainBinding binding = null;
 
@@ -39,6 +40,7 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
 //                당첨번호를 생성 => 텍스트뷰에 반영
             makeWinLottoNum();
+            checkLottoRank();
             }
         });
 
@@ -134,4 +136,14 @@ public class MainActivity extends BaseActivity {
         binding.bonusNumTxt.setText(bonusNum+"");
 
     }
+
+    void checkLottoRank() {
+//        돈을 천원 지불+등수 확인.
+
+        useMoneyAmount+=1000;
+
+        binding.useMoneyTxt.setText(String.format("사용 금액 : %,d원",useMoneyAmount));
+
+    }
+
 }
